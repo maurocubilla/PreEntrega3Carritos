@@ -1,0 +1,62 @@
+const productos =
+[
+    {
+        id: 1,
+        nombre: "kit cables para amplificador",
+        tipo: "kit",
+        desc: "kit cables 4 gauge",
+        precio: 6000,
+        img: '/public/images/kitsds18uno.webp',
+        cantidad:1
+    },
+
+    {
+        id: 2,
+        nombre: "kit cable para amplificador",
+        tipo: "kit cables ",
+        desc: "kit de cables para potencia ",
+        precio: 10000,
+        img: '/public/images/kitszero.webp',
+        cantidad:1
+    },
+
+    {
+        id: 3,
+        nombre: "kits cables",
+        tipo: "kit ampificador",
+        desc: "kit cables ",
+        precio: 11000,
+        img: '/public/images/kitstinger1.webp',
+        cantidad:1
+    },
+
+    {
+        id: 4,
+        nombre: "Rockford ",
+        tipo: "Amplificador ",
+        desc: "Amplificador mono block 600 rms",
+        precio: 65000,
+        img: '/public/images/rockford1.webp',
+        cantidad:1
+    },
+
+    {
+        id: 5,
+        nombre: "Sound Magus",
+        tipo: "Amplificador",
+        desc: "monoblok 600 rms",
+        precio: 45000,
+        img: '/public/images/soundmagus600.1.webp',
+        cantidad:1
+    },
+
+    {
+        id: 6,
+        nombre: "Rockford ",
+        tipo: "Amplificador",
+        desc: "4 canales 800 rms",
+        precio: 70000,
+        img: '/public/images/rocford2.webp',
+        cantidad:1
+    }
+];
