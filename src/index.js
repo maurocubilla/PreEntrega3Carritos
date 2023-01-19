@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito = obtenerCarritoStorage();
         console.log(carrito)
         actualizarCarrito(carrito);
-        actulizarTotalesCarrito(carrito);
+        actualizarTotalesCarrito(carrito);
+        
     }
 });

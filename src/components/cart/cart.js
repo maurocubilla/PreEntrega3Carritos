@@ -4,7 +4,7 @@ const productoContenedor = document.getElementById('producto-contenedor');
 
 productoContenedor.addEventListener('click', (e) => {
     if (e.target.classList.contains('agregar')) {
-        validarProductoRepetido(e.target.id)
+          validarProductoRepetido(e.target.id)
     }
 });
 
