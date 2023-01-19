@@ -1,7 +1,7 @@
 const pintarProductos = () => {
   const contenedor = document.getElementById("producto-contenedor");
 
-  fetch('/src/components/data/products.json')
+  fetch('./src/components/data/products.json')
     .then(resp => resp.json())
     .then(productos => (
       productos.forEach(producto => {
