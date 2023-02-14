@@ -1,5 +1,5 @@
 let carrito = [];
-
+//  carrito//
 const productoContenedor = document.getElementById('producto-contenedor');
 
 productoContenedor.addEventListener('click', (e) => {
@@ -25,15 +25,19 @@ const validarProductoRepetido = (productoId) => {
     }
 };
 
+
+
+
 const pintarProductoCarrito = (producto) => {
     const contenedor = document.getElementById('carrito-contenedor');
     const div = document.createElement('div');
     div.classList.add('productoEnCarrito');
     div.innerHTML = `
         <p>${producto.nombre}</p>
-        <p>Precio: ${producto.precio}</p>
+        <p>Precio:${producto.precio}</p>
         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
+        
     `
     contenedor.appendChild(div);
 };
@@ -44,7 +48,7 @@ const eliminarProductoCarrito = (productoId) => {
     actualizarCarrito(carrito);
     actualizarTotalesCarrito(carrito);
 };
-
+ 
 const actualizarCarrito = (carrito) => {
     const contenedor = document.getElementById('carrito-contenedor');
 
@@ -58,10 +62,42 @@ const actualizarCarrito = (carrito) => {
             <p>Precio: ${producto.precio}</p>
             <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
+            <button id="borrar_carrito"> vaciar carrito</button>
         `
         contenedor.appendChild(div);
     });
 };
+
+// funcion para vaciar el carrito//
+const vaciarcarrito = document.getElementById('borrar_carrito')
+
+vaciarCarrito.addEventListener(`click`, () => {
+    if (carrito.length===0){
+        swall.fire({
+            icon:"error",
+            text:"su carrito se encuentra vacio",
+            showConfirmButton:false,
+            timer: 2000
+        })
+    }  
+    else{
+    carrito.length = 0
+       swall.fire ({
+        icon: "éxito",
+        text: "su carrito esta vacio",
+        showConfirmButton:false,
+        timer: 2000
+    })
+    }
+    actualizarCarrito(carrito);
+    actualizarTotalesCarrito(carrito);
+});
+
+const vaciarCarritoStorage =(carrito) => {
+    localStorage.setItem( 'carrito', JSON.stringify(carrito));
+    return carritoStorage();
+};
+
 
 const guardarCarritoStorage = (carrito) => {
     localStorage.setItem('carrito', JSON.stringify(carrito));

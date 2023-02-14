@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
         carrito = obtenerCarritoStorage();
         console.log(carrito)
-        actualizarCarrito(carrito);
-        actualizarTotalesCarrito(carrito);
+        actualizarCarrito(carrito)
+        actualizarTotalesCarrito(carrito)
         
     }
 });
