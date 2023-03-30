@@ -62,7 +62,6 @@ const actualizarCarrito = (carrito) => {
             <p>Precio: ${producto.precio}</p>
             <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
-            <button id="borrar_carrito"> vaciar carrito</button>
         `
         contenedor.appendChild(div);
     });
@@ -70,10 +69,10 @@ const actualizarCarrito = (carrito) => {
 
 // funcion para vaciar el carrito//
 const vaciarcarrito = document.getElementById('borrar_carrito')
-
-vaciarCarrito.addEventListener(`click`, () => {
+console.log(vaciarcarrito)
+vaciarCarrito.addEventListener('click', () => {
     if (carrito.length===0){
-        swall.fire({
+        Swal.fire({
             icon:"error",
             text:"su carrito se encuentra vacio",
             showConfirmButton:false,
@@ -82,8 +81,8 @@ vaciarCarrito.addEventListener(`click`, () => {
     }  
     else{
     carrito.length = 0
-       swall.fire ({
-        icon: "éxito",
+       Swal.fire ({
+        icon: "success",
         text: "su carrito esta vacio",
         showConfirmButton:false,
         timer: 2000
@@ -119,8 +118,6 @@ const actualizarTotalesCarrito = (carrito) => {
 const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
     const contadorCarrito = document.getElementById('contador-carrito');
     const precioTotal = document.getElementById('precioTotal');
-    console.log(contadorCarrito, precioTotal)
-
     contadorCarrito.innerText = totalCantidad;
     precioTotal.innerText = totalCompra;
 };
